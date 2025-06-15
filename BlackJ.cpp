@@ -47,10 +47,12 @@ Carta* CrearMazo(){
     "Corazones","Picas"};
     
     int inicio=0;
-    for (string figura: cartaFiguras)
+    for (int i =0; i<4; i++)
     {
-        for (string valor: cartaValores)
+        string figura = cartaFiguras[i];
+        for (int j=0;j<13;j++)
         {
+            string valor= cartaValores[j];
             mazo[inicio].valor = valor;
             mazo[inicio].figura= figura;
 
@@ -69,14 +71,35 @@ Carta* CrearMazo(){
                 //ejemplo "2" lo convierte de string a int siendo ahora 2
             }
             
-            
+            inicio++;
         }
         
+    }
+    return mazo;
+}
+
+//funcion para mezclar aleatoriamente
+void mezclarMazo(Carta* mazo){
+    for (int i = 0; i < TamMazo; i++)
+    {
+        int j= rand()%TamMazo;
+        Carta momento = mazo[i];
+        mazo[i]=mazo[j];//se mueve la carta entre posiciones
+        mazo[j]=momento;//mezcla lo de i a j
     }
     
 }
 
+
 int main(){
     srand(time(NULL));
+    Carta* mazo=CrearMazo();
+    mezclarMazo(mazo);
+    cout <<"\nLas cartas son: "<<endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << mazo[i].valor << " de " << mazo[i].figura << endl;
+    }
+    
     return 0;
 }
