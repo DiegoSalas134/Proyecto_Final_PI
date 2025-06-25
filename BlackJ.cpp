@@ -175,7 +175,7 @@ void ganador(Jugador j, Jugador c){
 //funcion para guardar en un archivo
 void guardar(Partida p){
     fstream file;
-    file.open("Historial.txt", ios::out|ios::trunc);
+    file.open("Historial.txt", ios::out|ios::app);
     if (!file)
     {
         cout  << "No se abrio"<< endl;
