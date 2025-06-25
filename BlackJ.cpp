@@ -124,7 +124,7 @@ void tuTurno(Jugador &j, Carta*mazo, int &inicioMazo){
             cout << j.mano[i].valor << " de " << j.mano[i].figura <<endl;
         }
         cout << "Tus puntos son: " << j.puntos<<endl;
-        cout <<"¿Quieres otra carta? (s/n): "<<endl;
+        cout <<"Quieres otra carta? (s/n): "<<endl;
         cin>>op;
         if (op=='S' || op=='s')
         {
