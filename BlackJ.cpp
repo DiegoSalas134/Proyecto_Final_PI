@@ -213,7 +213,7 @@ int main(){
         repartir(c, mazo, inicioMazo);
         cout << "\nCarta que tiene la computadora: " << endl;
         cout << c.mano[0].valor << " de " << c.mano[0].figura << endl;
-        
+        cout << c.mano[1].valor << " de " << c.mano[1].figura << endl;
         tuTurno(j, mazo, inicioMazo);
         
         if(j.puntos <= 21){
@@ -271,7 +271,7 @@ int main(){
         cout << "\nQuieres jugar otra vez? (s/n): ";
         cin >> op;
         
-        if(inicioMazo < 20){//cuando hya menos de 20 cartas el juego se vuelve a mezclar
+        if(inicioMazo < 20){//cuando haya menos de 20 cartas el juego se vuelve a mezclar
             //esto evita que se acaben las cartas
             mezclarMazo(mazo);
             inicioMazo = TamMazo-1;
